@@ -63,4 +63,14 @@ public class PasswordUtilsTest {
         assertEquals(3,actual);
 
         }
+
+        @Test
+        void testCountSpecialCharacters_None() {
+            //arrange
+            String password = "password123";
+            //act
+            int actual = PasswordUtils.countSpecialCharacters(password);
+            //assert
+            assertEquals(0, actual);
+        }
 }
