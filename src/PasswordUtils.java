@@ -43,6 +43,11 @@ public class PasswordUtils {
         }
         return true;
     }
+
+    // For a password that has three letters in a row
+    // "paaassword"
+    //return true if it has three
+
     public static boolean containsTriple(String password){
         if (password == null || password.length() < 3) {
             return false;
@@ -62,4 +67,22 @@ public class PasswordUtils {
     return false;
 
     }
+
+    // returns the number of special characters in the password
+    //Special characters like *, #, @ , !, so not letters or numbers
+
+    public static int countSpecialCharacters(String password) {
+        if (password == null) {
+            return 0;
+        }
+        int count = 0;
+        for (int i = 0; i < password.length(); i++) {
+            char ch = password.charAt(i);
+            if (!Character.isLetterOrDigit(ch)) {
+                count++;
+            }
+        }
+        return count; 
+    }
+
 }

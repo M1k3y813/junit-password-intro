@@ -58,7 +58,7 @@ public class PasswordUtilsTest {
         //arrange
         String password = "pass!word@123#";
         //act
-        int actual = PasswordUtils.testCountSpecialCharacters(password);
+        int actual = PasswordUtils.countSpecialCharacters(password);
         //assert
         assertEquals(3,actual);
 
