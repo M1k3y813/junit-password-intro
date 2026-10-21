@@ -52,4 +52,15 @@ public class PasswordUtilsTest {
         //assert
         assertFalse(actual);
     }
+
+    @Test 
+    void testCountSpecialCharacters_Multiple() {
+        //arrange
+        String password = "pass!word@123#";
+        //act
+        int actual = PasswordUtils.testCountSpecialCharacters(password);
+        //assert
+        assertEquals(3,actual);
+
+        }
 }
