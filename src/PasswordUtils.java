@@ -20,11 +20,11 @@ public class PasswordUtils {
             return "medium";
         } else if (length < 21) {
         return "long";
-    } else 
+    } else {
     return "extra long";
 }
 
-
+    }
 
     /**
      * Checks whether the password contains only letters and digits.
@@ -44,7 +44,22 @@ public class PasswordUtils {
         return true;
     }
     public static boolean containsTriple(String password){
-        return false;
+        if (password == null || password.length() < 3) {
+            return false;
+        }
+
+    for (int i = 0; i < password.length() - 3; i++) {
+        char first = password.charAt(i);
+        char second = password.charAt(i + 1);
+        char third = password.charAt(i + 2);
+
+        if(first == second && second == third) {
+            return true;
+        }
+
     }
 
+    return false;
+
+    }
 }
