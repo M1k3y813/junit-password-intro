@@ -65,12 +65,13 @@ public class PasswordUtilsTest {
         }
 
         @Test
-        void testCountSpecialCharacters_None() {
+        void testHasSufficientSpecialCharacters() {
             //arrange
-            String password = "password123";
+            String password = "pa#ss!word@123";
+            int minimum = 3;
             //act
-            int actual = PasswordUtils.countSpecialCharacters(password);
+            boolean actual = PasswordUtils.hasSufficientSpecialCharacters(password, minimum);
             //assert
-            assertEquals(0, actual);
+            assertTrue(actual); 
         }
 }
